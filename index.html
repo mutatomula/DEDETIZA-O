@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedetização Profissional</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background: #1a7431;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 200px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .hero button {
+            background: #25d366;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .hero button:hover {
+            background: #128c7e;
+        }
+        .content img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .quiz {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        .quiz h2 {
+            margin-bottom: 15px;
+        }
+        .quiz-step {
+            display: none;
+        }
+        .quiz-step.active {
+            display: block;
+        }
+        .quiz button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #1a7431;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quiz button:hover {
+            background: #145a24;
+        }
+        footer {
+            text-align: center;
+            background: #1a7431;
+            color: #fff;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Quando contratar uma empresa de dedetização.png" alt="Logo Dedetização">
+        <h1>Serviços Profissionais de Dedetização</h1>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Elimine Pragas de Forma Rápida e Segura!</h1>
+            <button onclick="window.location.href='https://wa.me/5538991292731?text=Olá! Gostaria de mais informações sobre os serviços de dedetização.'">Falar no WhatsApp</button>
+        </div>
+
+        <div class="content">
+            <p>Somos especializados em controle de pragas urbanas, oferecendo segurança e tranquilidade para sua casa ou empresa. Nossos profissionais utilizam produtos seguros e eficazes para eliminar insetos, roedores e outras pragas indesejadas.</p>
+            <img src="diferenca-entre-dedetizacao-e-desinsetizacao.webp" alt="Serviço de Dedetização">
+        </div>
+
+        <div class="quiz">
+            <h2>Descubra a melhor solução para o seu problema</h2>
+            <form id="quizForm">
+                <div class="quiz-step active" data-step="1">
+                    <p>1. Qual tipo de praga você está enfrentando?</p>
+                    <select id="praga">
+                        <option>Baratas</option>
+                        <option>Ratos</option>
+                        <option>Formigas</option>
+                        <option>Outros</option>
+                    </select>
+                    <button type="button" onclick="nextStep(2)">Próximo</button>
+                </div>
+                <div class="quiz-step" data-step="2">
+                    <p>2. Onde o problema está ocorrendo?</p>
+                    <select id="local">
+                        <option>Residência</option>
+                        <option>Empresa</option>
+                        <option>Apartamento</option>
+                        <option>Outro</option>
+                    </select>
+                    <button type="button" onclick="nextStep(3)">Próximo</button>
+                </div>
+                <div class="quiz-step" data-step="3">
+                    <p>3. Qual a gravidade do problema?</p>
+                    <select id="gravidade">
+                        <option>Leve</option>
+                        <option>Média</option>
+                        <option>Alta</option>
+                    </select>
+                    <button type="button" onclick="sendWhatsApp()">Finalizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Dedetização Profissional - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function nextStep(step) {
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
+            document.querySelector('.quiz-step[data-step="' + step + '"]').classList.add('active');
+        }
+
+        function sendWhatsApp() {
+            let praga = document.getElementById('praga').value;
+            let local = document.getElementById('local').value;
+            let gravidade = document.getElementById('gravidade').value;
+            let mensagem = `Olá! Estou enfrentando um problema com ${praga} em ${local}, a gravidade é ${gravidade}. Gostaria de ajuda.`;
+            window.location.href = "https://wa.me/5538991292731?text=" + encodeURIComponent(mensagem);
+        }
+    </script>
+
+</body>
+</html>
