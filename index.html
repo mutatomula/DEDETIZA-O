@@ -277,7 +277,7 @@
 
         .feature-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 15px;
         }
 
@@ -292,6 +292,11 @@
             justify-content: center;
             margin-right: 15px;
             font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            flex: 1;
         }
 
         /* Areas Section */
@@ -751,6 +756,14 @@
             .section-title {
                 font-size: 1.8rem;
             }
+            
+            /* Correções para a seção About em dispositivos móveis */
+            .feature-item {
+                align-items: flex-start;
+            }
+            .feature-icon {
+                margin-top: 3px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -781,10 +794,8 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#services">Serviços</a></li>
                 <li><a href="#about">Quem Somos</a></li>
-                <li><a href="#areas">Áreas de Atuação</a></li>
                 <li><a href="#quiz">Orçamento</a></li>
                 <li><a href="#testimonials">Avaliações</a></li>
-                <li><a href="#certifications">Certificações</a></li>
                 <li><a href="#faq">Perguntas Frequentes</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
@@ -851,25 +862,25 @@
                             <div class="feature-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <div>Produtos seguros e autorizados pelos órgãos competentes</div>
+                            <div class="feature-text">Produtos seguros e autorizados pelos órgãos competentes</div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
-                            <div>Serviço rápido com mínimo de incômodo</div>
+                            <div class="feature-text">Serviço rápido com mínimo de incômodo</div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-award"></i>
                             </div>
-                            <div>Profissionais treinados e certificados</div>
+                            <div class="feature-text">Profissionais treinados e certificados</div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-medal"></i>
                             </div>
-                            <div>Garantia de satisfação em todos os serviços</div>
+                            <div class="feature-text">Garantia de satisfação em todos os serviços</div>
                         </div>
                     </div>
                 </div>
@@ -1160,10 +1171,8 @@
                     <h3>Links Rápidos</h3>
                     <a href="#services">Serviços</a>
                     <a href="#about">Quem Somos</a>
-                    <a href="#areas">Áreas de Atuação</a>
                     <a href="#quiz">Orçamento</a>
                     <a href="#testimonials">Avaliações</a>
-                    <a href="#certifications">Certificações</a>
                     <a href="#faq">Perguntas Frequentes</a>
                 </div>
                 <div class="footer-col">
